@@ -1,0 +1,117 @@
+{
+    "anuncios": [
+    {
+        "nombre": "Bicicleta",
+        "venta": true,
+        "precio": 230.15,
+        "foto": "bici.jpg",
+        "tags": [ "lifestyle", "motor"]
+    },
+    {
+        "nombre": "iPhone 15",
+        "venta": false,
+        "precio": 750.00,
+        "foto": "iphone.jpg",
+        "tags": [ "lifestyle", "mobile"]
+    }, 
+    
+    {
+        "nombre": "PS5",
+        "venta": true,
+        "precio": 350.00,
+        "foto": "ps5.jpg",
+        "tags": [ "lifestyle", "mobile"]
+    },
+    {
+        "nombre": "Ducati",
+        "venta": true,
+        "precio": 20000.00,
+        "foto": "ducati.jpg",
+        "tags": [ "lifestyle", "motor"]
+    },
+    {
+        "nombre": "Videojuego",
+        "venta": true,
+        "precio": 20000.00,
+        "foto": "videojuego.jpg",
+        "tags": [ "lifestyle", "motor"]
+    },
+    {
+        "nombre": "Nintendo",
+        "venta": true,
+        "precio": 189.00,
+        "foto": "nintendo.jpg",
+        "tags": [ "lifestyle", "mobile"]
+    },
+    {
+        "nombre": "LLantas",
+        "venta": true,
+        "precio": 1350.00,
+        "foto": "llantas.jpg",
+        "tags": [ "lifestyle", "motor"]
+    },
+    {
+        "nombre": "Manos libres",
+        "venta": true,
+        "precio": 41.00,
+        "foto": "manoslibres.jpg",
+        "tags": [ "work", "mobile"]
+    },
+    {
+        "nombre": "Auriculares",
+        "venta": true,
+        "precio": 62.00,
+        "foto": "auriculares.jpg",
+        "tags": [ "lifestyle", "mobile"]
+    },
+    {
+        "nombre": "robot limpieza",
+        "venta": true,
+        "precio": 967.00,
+        "foto": "robot.jpg",
+        "tags": [ "lifestyle", "work"]
+    },
+    {
+        "nombre": "reloj",
+        "venta": true,
+        "precio": 80.00,
+        "foto": "reloj.jpg",
+        "tags": [ "lifestyle", "mobile"]
+    },
+    {
+        "nombre": "Patinete",
+        "venta": false,
+        "precio": 390.00,
+        "foto": "patinete.jpg",
+        "tags": [ "lifestyle", "motor"]
+    },
+    {
+        "nombre": "pc",
+        "venta": true,
+        "precio": 2000.00,
+        "foto": "pc.jpg",
+        "tags": [ "lifestyle", "work"]
+    },
+    {
+        "nombre": "bmw",
+        "venta": false,
+        "precio": 24000.00,
+        "foto": "bmw.jpg",
+        "tags": [ "lifestyle", "motor"]
+    },
+    {
+        "nombre": "yamaha",
+        "venta": true,
+        "precio": 11000.00,
+        "foto": "yamaha.jpg",
+        "tags": [ "lifestyle", "motor"]
+    },
+    {
+        "nombre": "Honda",
+        "venta": true,
+        "precio": 8000.00,
+        "foto": "honda.jpg",
+        "tags": [ "lifestyle", "motor"]
+    }
+    ]
+}

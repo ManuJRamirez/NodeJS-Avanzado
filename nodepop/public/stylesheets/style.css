@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background: rgb(99, 137, 196);
+}
+
+.anuncios {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.anuncio {
+  background: #f3f9fc;
+  width: 31%;
+  padding: 1rem 2rem;
+  margin: 1%;
+  -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.image {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

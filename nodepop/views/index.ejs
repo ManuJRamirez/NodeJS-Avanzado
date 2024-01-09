@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div class="anuncios">
+      <% anuncios.forEach( anuncio => { %>
+      <div class="anuncio">
+        <header><h3><%= anuncio.nombre %></h3></header>
+        <% if (anuncio.venta) { %>
+        <p>Producto a la venta</p>
+        <% } else { %>
+        <p>Producto buscado</p>
+        <% } %>
+        <div class="img-wrapper">
+          <img class="image" src="/images/<%= anuncio.foto %>" />
+        </div>
+        <p class="price">
+          Precio: <span class="price-number"><%= anuncio.precio %></span> €
+        </p>
+        <div class="tags">
+          <% anuncio.tags.forEach( tag => { %>
+          <p>#<%= tag %></p>
+          <% }); %>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </body>
+</html>
