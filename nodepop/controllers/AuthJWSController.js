@@ -13,9 +13,9 @@ async function postJWTAPI(req, res, next) {
 
     const apiJWTtoken = await jws.sign(
       { _id: usuario._id },
-      'practicaNodeweb15',
+      process.env.JWT_SECRET,
       {
-        expiresIn: '3h',
+        expiresIn: '120s',
       },
     );
     res.json({ jwt: apiJWTtoken });

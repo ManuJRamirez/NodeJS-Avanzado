@@ -1,5 +1,5 @@
 'use script';
-
+require('dotenv').config();
 const connection = require('./lib/connectMongoose');
 const Anuncio = require('./models/Anuncio');
 const { read } = require('node:fs');
@@ -29,6 +29,7 @@ async function initAnuncios() {
   const codedPassword = await Usuario.cryptedPassword(adminPassword);
   const addAdminUser = await Usuario.insertMany([
     { email: 'user@example.com', password: codedPassword },
+    { email: 'user1@example.com', password: codedPassword },
   ]);
   const adminUser = addAdminUser.map(user => user.email);
 

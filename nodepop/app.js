@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const swaggerMiddleware = require('./lib/swaggerMiddleware');
 const authJWSController = require('./controllers/AuthJWSController');
+const jwsAuthMiddleware = require('./lib/jwsAuthMiddleware');
+const errorHandler401 = require('./lib/errorHandler401');
 
 require('./lib/connectMongoose');
 
@@ -22,10 +24,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api/anuncios', require('./routes/api/anuncios'));
+app.use('/api/anuncios', jwsAuthMiddleware, require('./routes/api/anuncios'));
 app.post('/api/authenticate', authJWSController);
 app.use('/api-doc', swaggerMiddleware);
 app.use('/', require('./routes/index'));
+
+// catch 401
+app.use(errorHandler401);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
