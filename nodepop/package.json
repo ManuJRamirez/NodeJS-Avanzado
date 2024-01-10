@@ -8,7 +8,9 @@
     "init-db": "node init-db.js"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cookie-parser": "~1.4.4",
+    "create-error": "^0.3.1",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",

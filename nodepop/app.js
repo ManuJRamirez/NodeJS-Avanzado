@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const swaggerMiddleware = require('./lib/swaggerMiddleware');
+const authJWSController = require('./controllers/AuthJWSController');
 
 require('./lib/connectMongoose');
 
@@ -22,6 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/anuncios', require('./routes/api/anuncios'));
+app.post('/api/authenticate', authJWSController);
 app.use('/api-doc', swaggerMiddleware);
 app.use('/', require('./routes/index'));
 
