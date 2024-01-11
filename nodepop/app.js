@@ -7,6 +7,8 @@ const swaggerMiddleware = require('./lib/swaggerMiddleware');
 const authJWSController = require('./controllers/AuthJWSController');
 const jwsAuthMiddleware = require('./lib/jwsAuthMiddleware');
 const errorHandler401 = require('./lib/errorHandler401');
+const i18n = require('./controllers/i18nConfigure');
+const localeChangerController = require('./controllers/localeChangerController');
 
 require('./lib/connectMongoose');
 
@@ -27,7 +29,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/anuncios', jwsAuthMiddleware, require('./routes/api/anuncios'));
 app.post('/api/authenticate', authJWSController);
 app.use('/api-doc', swaggerMiddleware);
+
+app.use(i18n.init);
 app.use('/', require('./routes/index'));
+app.get('/locale-changer/:locale', localeChangerController);
 
 // catch 401
 app.use(errorHandler401);

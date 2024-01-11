@@ -2,25 +2,31 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <nav class="localeChange">
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+      <% getLocales().forEach(locale => { %>
+      <a href="/locale-changer/<%= locale %>"><%= locale %></a>
+      <% }) %>
+    </nav>
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p><%= __('Welcome to')%> <%= title %></p>
     <div class="anuncios">
       <% anuncios.forEach( anuncio => { %>
       <div class="anuncio">
         <header><h3><%= anuncio.nombre %></h3></header>
         <% if (anuncio.venta) { %>
-        <p>Producto a la venta</p>
+        <p><%= __('On Sale')%></p>
         <% } else { %>
-        <p>Producto buscado</p>
+        <p><%= __('On Purchasing')%></p>
         <% } %>
         <div class="img-wrapper">
           <img class="image" src="/images/<%= anuncio.foto %>" />
         </div>
         <p class="price">
-          Precio: <span class="price-number"><%= anuncio.precio %></span> €
+          <%= __('Price:')%>
+          <span class="price-number"><%= anuncio.precio %></span> €
         </p>
         <div class="tags">
           <% anuncio.tags.forEach( tag => { %>
