@@ -15,7 +15,7 @@ async function postJWTAPI(req, res, next) {
       { _id: usuario._id },
       process.env.JWT_SECRET,
       {
-        expiresIn: '120s',
+        expiresIn: '300s',
       },
     );
     res.json({ jwt: apiJWTtoken });

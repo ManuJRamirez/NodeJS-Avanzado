@@ -32,7 +32,7 @@ app.use('/api-doc', swaggerMiddleware);
 
 app.use(i18n.init);
 app.use('/', require('./routes/index'));
-app.get('/locale-changer/:locale', localeChangerController);
+app.use('/locale-changer/:locale', localeChangerController);
 
 // catch 401
 app.use(errorHandler401);

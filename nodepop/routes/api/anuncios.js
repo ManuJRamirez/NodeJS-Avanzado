@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Anuncio = require('../../models/Anuncio');
+const upload = require('../../lib/uploadConfigure');
+const { forEach } = require('../../lib/swaggerMiddleware');
 
 /**
  * @swagger
@@ -126,6 +128,10 @@ router.get('/', async (req, res, next) => {
     }
 
     const anuncios = await Anuncio.lista(filtro, start, limit, sort, fields);
+
+    anuncios.forEach(
+      anuncio => (anuncio.foto = process.env.RUTA_IMG + anuncio.foto),
+    );
     res.locals.anuncios = anuncios;
     res.json({ result: anuncios });
   } catch (error) {
@@ -151,12 +157,13 @@ router.get('/:foto', function (req, res, next) {
   }
 });
 
-router.post('/', async (req, res, next) => {
+router.post('/', upload.single('foto'), async (req, res, next) => {
   try {
     const datosAnuncio = req.body;
-
+    console.log(datosAnuncio);
     const nuevoAnuncio = new Anuncio(datosAnuncio);
 
+    nuevoAnuncio.foto = req.file.filename;
     const anuncioGuardado = await nuevoAnuncio.save();
 
     res.json({ result: anuncioGuardado });
