@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "cross-env DEBUG=nodepop:* nodemon ./bin/www",
-    "init-db": "node init-db.js"
+    "init-db": "node init-db.js",
+    "thumbnail-maker-service": "node ./micro-services/thumbnailMaker.js"
   },
   "dependencies": {
     "amqplib": "^0.10.3",
