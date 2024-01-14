@@ -9,8 +9,6 @@ const QUEUE = 'thumbnail-maker';
 
 main().catch(err => console.log('Hubo un error', err));
 
-//const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
 async function main() {
   const connection = await amqplib.connect(process.env.AMQPLIB_URL);
 
