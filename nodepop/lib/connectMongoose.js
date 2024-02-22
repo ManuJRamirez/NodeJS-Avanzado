@@ -8,6 +8,6 @@ mongoose.connection.once('open', () => {
   console.log('Conectado a MongoDB en', mongoose.connection.name);
 });
 
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.DATABASE_URI || process.env.MONGODB_URI);
 
 module.exports = mongoose.connection;
